@@ -313,7 +313,13 @@ class SubSource
 
 			$osGroup = new OsGroup();
 			$osGroup->setName($osGroupName);
-			$this->_pakiti->getManager('OsGroupsManager')->storeOsGroup($osGroup);
+			try {
+				$this->_pakiti->getManager('OsGroupsManager')->storeOsGroup($osGroup);
+			} catch (Exception $e) {
+				# This OS is probably missing in the configuration file
+				Utils::log(LOG_ERR, "Unable to store ".$osGroupName.": ".$e->getMessage(), __FILE__, __LINE__);
+				continue;
+			}
 
 			$vuln->setName($defPkg['name']);
 			$vuln->setRelease($defPkg['release']);
