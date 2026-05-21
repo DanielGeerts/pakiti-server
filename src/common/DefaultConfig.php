@@ -124,7 +124,7 @@ class DefaultConfig
     # Debian publishes vulnerabilities at a single URL, referring to all distributions. Setting this
     # directive makes the processing a bit more efficient and helps avoid errors when indices for the
     # older distributions are not available.
-    public static $DEBIAN_IGNORED_VERSIONS = [ "stretch", "jessie", "wheezy", "squeeze", "lenny", "etch", "sarge", "woody" ];
+    public static $DEBIAN_IGNORED_VERSIONS = [ "buster", "stretch", "jessie", "wheezy", "squeeze", "lenny", "etch", "sarge", "woody" ];
     # Endpoint to get the Debian Source indices
     public static $DEBIAN_REPOSITORY = "http://ftp.debian.org/debian";
 
@@ -145,6 +145,7 @@ class DefaultConfig
         "sarge" => "Debian.* 3\.1.*",
         "woody" => "Debian.* 3\.0.*",
         # Red Hat
+        "Red Hat Enterprise Linux 10" => "(Red\s*Hat.* 10.*)|(CentOS.* 10.*)|(Scientific.* 10.*)|(Rocky.* 10.*)",
         "Red Hat Enterprise Linux 9" => "(Red\s*Hat.* 9.*)|(CentOS.* 9.*)|(Scientific.* 9.*)|(Rocky.* 9.*)",
         "Red Hat Enterprise Linux 8" => "(Red\s*Hat.* 8.*)|(CentOS.* 8.*)|(Scientific.* 8.*)|(Rocky.* 8.*)",
         "Red Hat Enterprise Linux 7" => "(Red\s*Hat.* 7.*)|(CentOS.* 7.*)|(Scientific.* 7.*)",
@@ -153,6 +154,8 @@ class DefaultConfig
         "Red Hat Enterprise Linux 4" => "(Red\s*Hat.* 4.*)|(CentOS.* 4.*)|(Scientific.* 4.*)",
         "Red Hat Enterprise Linux 3" => "(Red\s*Hat.* 3.*)|(CentOS.* 3.*)|(Scientific.* 3.*)",
         # SUSE
+        "SUSE Linux Enterprise Server 15 SP7" => "SUSE.* 15\.7.*",
+        "SUSE Linux Enterprise Server 15 SP6" => "SUSE.* 15\.6.*",
         "SUSE Linux Enterprise Server 15 SP5" => "SUSE.* 15\.5.*",
         "SUSE Linux Enterprise Server 15 SP4" => "SUSE.* 15\.4.*",
         "SUSE Linux Enterprise Server 15 SP3" => "SUSE.* 15\.3.*",
@@ -179,6 +182,7 @@ class DefaultConfig
         "openSUSE Leap 15.1" => "openSUSE.* 15\.1.*",
         "openSUSE Leap 15.2" => "openSUSE.* 15\.2.*",
         "openSUSE Leap 15.3" => "openSUSE.* 15\.3.*",
+        "openSUSE Leap 15.4" => "openSUSE.* 15\.4.*",
         # Ubuntu
         "Ubuntu 4.10" => "Ubuntu.* 4\.10.*",
         "Ubuntu 5.04" => "Ubuntu.* 5\.04.*",
@@ -221,14 +225,20 @@ class DefaultConfig
         "Ubuntu 23.10" => "Ubuntu.* 23\.10.*",
         "Ubuntu 24.04 LTS" => "Ubuntu.* 24\.04.*",
         "Ubuntu 24.10" => "Ubuntu.* 24\.10.*",
+        "Ubuntu 25.04" => "Ubuntu.* 25\.04.*",
+        "Ubuntu 25.10" => "Ubuntu.* 25\.10.*",
+        "Ubuntu 26.04 LTS" => "Ubuntu.* 26\.04.*",
+
         # CentOS
         "CentOS 5" => "CentOS.* 5.*",
         "CentOS 6" => "CentOS.* 6.*",
         "CentOS 7" => "CentOS.* 7.*",
         "CentOS 8" => "CentOS.* 8.*",
         "CentOS 9" => "CentOS.* 9.*",
+        "CentOS 10" => "CentOS.* 10.*",
         # AlmaLinux
         "AlmaLinux 8" => "AlmaLinux.* 8.*",
         "AlmaLinux 9" => "AlmaLinux.* 9.*",
+        "AlmaLinux 10" => "AlmaLinux.* 10.*",
     );
 }
