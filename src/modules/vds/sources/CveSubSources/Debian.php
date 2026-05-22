@@ -248,7 +248,11 @@ class Debian extends SubSource implements ISubSource
                     $rec['osGroup'][$deb_release] = array();
                 }
 
-                $this->add_resolved_packages($package_template, $deb_release, $source_name, $rec['osGroup'][$deb_release]);
+                try {
+                    $this->add_resolved_packages($package_template, $deb_release, $source_name, $rec['osGroup'][$deb_release]);
+                } catch (Exception $e) {
+                    Utils::log(LOG_ERR, "Unable to resolve Debian package: ".$e->getMessage(), __FILE__, __LINE__);
+                }
 
                 $line = strtok("\r\n");
                 continue;
