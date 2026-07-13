@@ -148,9 +148,10 @@ class HostDao
                 $join[] = "inner join Os on Host.osId = Os.id";
                 $tmpJoinOs = true;
             }
-            $where[] = "lower(Host.hostname) like '%".$this->db->escape(strtolower($search), true)."%'
+            $where[] = "(lower(Host.hostname) like '%".$this->db->escape(strtolower($search), true)."%'
                 or lower(Os.name) like '%".$this->db->escape(strtolower($search), true)."%'
-                or lower(Host.kernel) like '%".$this->db->escape(strtolower($search), true)."%'";
+                or lower(Host.kernel) like '%".$this->db->escape(strtolower($search), true)."%'
+                )";
         }
 
         if ($cveName != null || $tag != null) {
